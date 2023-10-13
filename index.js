@@ -77,7 +77,7 @@ const displayQuiz = (data) => {
 
 // EventListener for quiz submit button
 document.querySelector("#submit").addEventListener("click", () => {
-  if (answers.length < 6) {
+  if (answers.length < 10) {
     return;
   }
   quizTimer(true);
@@ -98,10 +98,10 @@ document.querySelector("#submit").addEventListener("click", () => {
     }
   }
 
-  if (totalMark === 60) {
+  if (totalMark === 100) {
     grade.status = "Excellent";
     grade.color = "text-green-600";
-  } else if (totalMark >= 40 && totalMark < 60) {
+  } else if (totalMark >= 50 && totalMark < 100) {
     grade.status = "Good";
     grade.color = "text-orange-600";
   } else {
@@ -144,7 +144,7 @@ document.querySelector("#submit").addEventListener("click", () => {
   >
     <h3 class="text-xl ${grade.color}">${grade.status}</h3>
     <h1 class="text-3xl font-bold my-2">
-      ${totalMark}<span class="text-slate-800">/60</span>
+      ${totalMark}<span class="text-slate-800">/100</span>
     </h1>
     <p class="text-sm flex justify-center items-center gap-2">
       Total Time: <span class="text-xl text-orange-500">${timeTaken.innerText.replace(
